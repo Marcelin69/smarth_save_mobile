@@ -6,6 +6,7 @@ import 'package:smarth_save/screen/Athantification/login_page.dart';
 import 'package:smarth_save/screen/Athantification/sig_up.dart';
 import 'package:smarth_save/screen/dashboard.dart';
 import 'package:smarth_save/screen/onbording.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     UserModel.getUser();
     _checkOnboardingStatus();
+    FlutterNativeSplash.remove();
   }
 
   Future<void> loadtoken() async {}
@@ -54,10 +56,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    return const Scaffold();
   }
 }
